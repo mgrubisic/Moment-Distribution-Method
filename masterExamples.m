@@ -30,7 +30,7 @@ clc; clear all; close all; format compact
 bendingMomentUnits = "kNm"; % kNm, Nm, Nmm, kNmm
 
 % Define File Name for Output
-outputFileName      = "Structure Example Output";
+outputFileName     = "Structure Example Output";
 
 
 %% Example #1
