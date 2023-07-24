@@ -49,7 +49,7 @@ outputFileName     = "Structure Example Output";
 
 
 %% Example #2
-%  Simple beam over 3 bays
+%  Simple beam (3 bays)
 
 % % a) Define Distribution Factors
 % distributionFactorsElements = {[2, 1], [2, 3], [3, 2], [3, 4]}';
