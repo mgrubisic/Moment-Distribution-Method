@@ -9,7 +9,7 @@ Named after its inventor, engineering professor Hardy Cross, the method was publ
 
 The moment distribution method is an exact technique that relies on a series of successive and improved approximations to calculate the bending moments in beams and frames.
 
-# This algorithm in Matlab, for the iterative solution of the Moment Distribution Method, is used at the University of Osijek, at the Faculty of Civil Engineering and Architecture Osijek, at the Department of Technical Mechanics under the Structural Analysis 2 course.
+### This algorithm in Matlab, for the iterative solution of the Moment Distribution Method, is used at the University of Osijek, at the Faculty of Civil Engineering and Architecture Osijek, at the Department of Technical Mechanics under the Structural Analysis 2 course.
 
 Assist. Prof. Marin Grubišić
 marin.grubisic@gfos.hr
