@@ -93,7 +93,7 @@ fixedEndMomentsElements     = {[1, 4], [4, 1], [4, 5], [5, 4], [4, 8], [8, 4], [
 fixedEndMoments             = [-38.33, -18.67, 30, -30, 20, -20, -52.5, 52.5, 13.33, -13.33, 13.33, 36.67]';
 
 
-%% Run 'momentDistributionMethod.p' function
+%% Run custom 'momentDistributionMethod.p' function
 
 momentDistributionMethod ( distributionFactorsElements, ...
                            distributionFactors, ...
