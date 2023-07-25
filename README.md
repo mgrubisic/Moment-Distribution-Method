@@ -9,17 +9,16 @@ Named after its inventor, engineering professor Hardy Cross, the method was publ
 
 The moment distribution method is an exact technique that relies on a series of successive and improved approximations to calculate the bending moments in beams and frames.
 
-
-a) Define Distribution Factors                
-distributionFactorsElements = cell array          
-distributionFactors         = array (columm vector)              
+- Define Distribution Factors                
+`distributionFactorsElements` = cell array          
+`distributionFactors`         = array (columm vector)              
               
-b) Define Carryover Factors (for the same Distribution-Factors-Elements)            
-carryoverFactors            = array (columm vector)              
+- Define Carryover Factors (for the same Distribution-Factors-Elements)            
+`carryoverFactors`            = array (columm vector)              
                
-c) Define Fixed-End Moments [e.g. in kNm]            
-fixedEndMomentsElements     = cell array               
-fixedEndMoments             = array (columm vector)            
+- Define Fixed-End Moments [e.g. in kNm]            
+`fixedEndMomentsElements`     = cell array               
+`fixedEndMoments`             = array (columm vector)            
 
             
 ### This algorithm in Matlab, for the iterative solution of the Moment Distribution Method, is used at the University of Osijek, at the Faculty of Civil Engineering and Architecture Osijek, at the Department of Technical Mechanics under the Structural Analysis 2 course.
