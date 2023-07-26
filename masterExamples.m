@@ -19,9 +19,10 @@
 
 %{
 MOMENT DISTRIBUTION METHOD (Hardy Cross, 1930)
-    The moment distribution method is a structural analysis method for statically indeterminate
-    beams and frames developed by Hardy Cross. It was published in 1930 in an ASCE journal.
-    The method only accounts for flexural effects and ignores axial and shear effects.
+    Hardy Cross developed the moment distribution method for structural analysis of
+    statically indeterminate beams and frames. It was published in an ASCE journal
+    in 1930. The method only takes flexural effects into account and ignores axial
+    and shear effects.
 %}
 
 clc; clear all; close all; format compact
@@ -40,7 +41,7 @@ outputFileName     = "Structure Example Output";
 % distributionFactorsElements = {[2,1], [2,4], [4,2], [4,3]}';
 % distributionFactors         = [0.290, 0.709, 0.765, 0.235]';
 % 
-% % b) Define Carryover Factors (for the same Distribution-Factors-Elements)
+% % b) Define Carryover Factors (for the same Distribution Factors Elements)
 % carryoverFactors            = [1/2, 1/2, 1/2, 1/2]';
 % 
 % % c) Define Fixed-End Moments [e.g. in kNm]
@@ -55,7 +56,7 @@ outputFileName     = "Structure Example Output";
 % distributionFactorsElements = {[2, 1], [2, 3], [3, 2], [3, 4]}';
 % distributionFactors         = [3/11, 8/11, 8/12, 4/12]';
 % 
-% % b) Define Carryover Factors (for the same Distribution-Factors-Elements)
+% % b) Define Carryover Factors (for the same Distribution Factors Elements)
 % carryoverFactors            = [0, 1/2, 1/2, 1/2]';
 % 
 % % c) Define Fixed-End Moments [e.g. in kNm]
@@ -70,7 +71,7 @@ outputFileName     = "Structure Example Output";
 % distributionFactorsElements = {[6,1], [6,5], [6,7], [7,2], [7,6], [7,8], [8,3], [8,7], [8,9], [9,4], [9,8], [9,10]}';
 % distributionFactors         = [4/15, 1/5, 8/15, 1/4, 1/4, 2/4, 1/8, 4/8, 3/8, 4/13, 4/13, 5/13]';
 % 
-% % b) Define Carryover Factors (for the same Distribution-Factors-Elements)
+% % b) Define Carryover Factors (for the same Distribution Factors Elements)
 % carryoverFactors            = [1/2, 0, 1/2, 1/2, 1/2, 1/2, 1/2, 1/2, 1/2, 1/2, 1/2, 0]';
 % 
 % % c) Define Fixed-End Moments [e.g. in kNm]
@@ -85,7 +86,7 @@ outputFileName     = "Structure Example Output";
 distributionFactorsElements = {[4, 3], [4, 1], [4, 5], [4, 8], [5, 4], [5, 2], [5, 6], [5, 9], [8, 7], [8, 4], [8, 9], [8, 10], [9, 8], [9, 5], [9, 11], [10, 8], [10, 11], [11, 10], [11,9]}';
 distributionFactors         = [9/28, 1/7, 3/28, 3/7, 6/55, 16/55, 9/55, 24/55, 1/5, 2/5, 1/5, 1/5, 2/7, 4/7, 1/7, 2/3, 1/3, 1/2, 1/2]';
 
-% b) Define Carryover Factors (for the same Distribution-Factors-Elements)
+% b) Define Carryover Factors (for the same Distribution Factors Elements)
 carryoverFactors            = [0, 1/2, 1/2, 1/2, 1/2, 1/2, 0, 1/2, 0, 1/2, 1/2, 1/2, 1/2, 1/2, 1/2, 1/2, 1/2, 1/2, 1/2]';
 
 % c) Define Fixed-End Moments [e.g. in kNm]
@@ -93,13 +94,23 @@ fixedEndMomentsElements     = {[1, 4], [4, 1], [4, 5], [5, 4], [4, 8], [8, 4], [
 fixedEndMoments             = [-38.33, -18.67, 30, -30, 20, -20, -52.5, 52.5, 13.33, -13.33, 13.33, 36.67]';
 
 
-%% Run custom 'momentDistributionMethod.p' function
+%% Run custom 'momentDistributionMethod.p' function as save outputs
 
-momentDistributionMethod ( distributionFactorsElements, ...
-                           distributionFactors, ...
-                           carryoverFactors, ...
-                           fixedEndMomentsElements, ...
-                           fixedEndMoments, ...
-                           bendingMomentUnits, ...
-                           outputFileName ...
-                           )
+%  All results are formated and saved in "{outputFileName}.txt"
+
+%{
+'outputStructure' contains:
+    - 'nodeIterationSequence'           - Order of iterations (steps) by nodes
+    - 'totalNumberofIterations'         - Total number of iterations (steps)
+    - 'finalBalancedBendingMoments'     - Final balanced bending moments
+    - 'balanceControlofIteratedNodes'   - Balance control of iterated nodes
+    - 'allStepsoftheIteration'          - All steps of the iteration, for easy control and insight into the iteration process
+%}
+outputStructure = momentDistributionMethod ( distributionFactorsElements, ...
+                                             distributionFactors, ...
+                                             carryoverFactors, ...
+                                             fixedEndMomentsElements, ...
+                                             fixedEndMoments, ...
+                                             bendingMomentUnits, ...
+                                             outputFileName ...
+                                             );
