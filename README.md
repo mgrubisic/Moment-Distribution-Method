@@ -27,12 +27,12 @@ The moment distribution method is an exact technique for calculating bending mom
 
 **Outputs:**
 
-- `outputStructure`
-  - `nodeIterationSequence` - Order of iterations (steps) by nodes
-  - `totalNumberofIterations` - Total number of iterations (steps)
-  - `finalBalancedBendingMoments` - Final balanced bending moments
-  - `balanceControlofIteratedNodes` - Balance control of iterated nodes
-  - `allStepsoftheIteration` - All steps of the iteration, for easy control and insight into the iteration process
+- `outputStructure` - Structured output
+  - `nodeIterationSequence` - Order of iterations (steps) by nodes [array (row vector)]     
+  - `totalNumberofIterations` - Total number of iterations (steps) [integer]     
+  - `finalBalancedBendingMoments` - Final balanced bending moments {cell array}    
+  - `balanceControlofIteratedNodes` - Balance control of iterated nodes [matrix]     
+  - `allStepsoftheIteration` - All steps of the iteration, for easy control and insight into the iteration process {cell array}    
 
 - All results are formated and saved in `{outputFileName}.txt`
 
