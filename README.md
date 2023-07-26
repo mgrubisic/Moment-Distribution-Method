@@ -18,7 +18,7 @@ The moment distribution method is an exact technique for calculating bending mom
 `distributionFactorsElements` = {cell array}          
 `distributionFactors`         = [array (columm vector)]           
               
-- Define Carryover Factors (for the same `distributionFactorsElements`)            
+- Define Carryover Factors (respectively, for the same `distributionFactorsElements`)            
 `carryoverFactors`            = [array (columm vector)]                      
                
 - Define Fixed-End Moments [e.g. in kNm]            
