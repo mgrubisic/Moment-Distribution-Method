@@ -1,14 +1,16 @@
-# Moment-Distribution-Method
-Moment-Distribution-Method
+# Moment Distribution Method (*Hardy Cross*, 1930)   
 
-Hardy Cross developed the moment distribution method for analyzing beams and frames, which he formally presented in 1930. Unlike the slope-deflection method, this approach is approximate and eliminates the need to solve simultaneous equations. The accuracy of the results obtained using moment distribution depends on the number of successive approximations or iterations performed. It specifically considers flexural effects while neglecting axial and shear effects. Before widespread computer usage in structural design and analysis, the moment distribution method was the most widely employed.
+<div align='justify'>
+Hardy Cross developed and formally presented the moment distribution method for analysing beams and frames in 1930. This method, unlike the slope-deflection method, is approximate and eliminates the need to solve simultaneous equations. The number of successive approximations or iterations performed determines the accuracy of the results obtained using the moment distribution. It focuses on flexural effects while ignoring axial and shear effects. Prior to the widespread use of computers in structural design and analysis, the moment distribution method was the most widely used.
 
-The moment distribution method is an iterative approach that overcomes the challenges posed by structures with numerous degrees of indeterminacy or freedom. By employing moment distribution, engineers can manually analyze highly indeterminate structures with many degrees of freedom.
+The moment distribution method is an iterative approach for dealing with structures with varying degrees of indeterminacy or freedom. Engineers can manually analyse highly indeterminate structures with many degrees of freedom by using moment distribution.
 
-Named after its inventor, engineering professor Hardy Cross, the method was published in a concise ten-page paper in September 1932. This publication, titled *"Analysis of Continuous Frames by Distributing Fixed-End Moments"*, revolutionized the field of structural engineering by enabling precise structural analysis.
+The method, named after engineering professor Hardy Cross, was published in September 1932 in a concise ten-page paper. This paper, titled *"Analysis of Continuous Frames by Distributing Fixed-End Moments"*, revolutionised structural engineering by allowing for precise structural analysis.
 
-The moment distribution method is an exact technique that relies on a series of successive and improved approximations to calculate the bending moments in beams and frames.     
+The moment distribution method is an exact technique for calculating bending moments in beams and frames that relies on a series of successive and improved approximations.
+</div>
 
+---
 
 Input:
 
@@ -23,8 +25,9 @@ Input:
 `fixedEndMomentsElements`     = {cell array}               
 `fixedEndMoments`             = [array (columm vector)]           
 
-            
-This algorithm in Matlab, for the iterative solution of the **Moment Distribution Method**, is used at the University of Osijek, at the **Faculty of Civil Engineering and Architecture Osijek**, at the Department of Technical Mechanics under the **Structural Analysis 2** course.
+---
 
-**Assist. Prof. Marin Grubišić**    
-**marin.grubisic@gfos.hr**
+> This Matlab algorithm for iteratively solving the **Moment Distribution Method** is used at the University of Osijek, **Faculty of Civil Engineering and Architecture Osijek**, Department of Technical Mechanics, as part of the **Structural Analysis 2** course.
+
+> **Assist. Prof. Marin Grubišić**    
+> **marin.grubisic@gfos.hr**
