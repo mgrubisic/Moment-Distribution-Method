@@ -27,11 +27,19 @@ MOMENT DISTRIBUTION METHOD (Hardy Cross, 1930)
 
 clc; clear all; close all; format compact
 
+%% Optional input variables
+
 % Define Bending Moment Unit for Output
-bendingMomentUnits = "kNm"; % kNm, Nm, Nmm, kNmm
+bendingMomentUnits  = "kNm"; % kNm, Nm, Nmm, kNmm
 
 % Define File Name for Output
-outputFileName     = "Structure Example Output";
+outputFileName      = "Structure Example Output";
+
+% Accuracy limit in bending moment balance (0.1 "kNm" by default)
+limitAccuracy       = 0.1;
+
+% Limited total number of iterations, i.e. steps (Infinite by default)
+limitIteration      = 20;
 
 
 %% Example #1
@@ -94,6 +102,21 @@ fixedEndMomentsElements     = {[1, 4], [4, 1], [4, 5], [5, 4], [4, 8], [8, 4], [
 fixedEndMoments             = [-38.33, -18.67, 30, -30, 20, -20, -52.5, 52.5, 13.33, -13.33, 13.33, 36.67]';
 
 
+%% Example #5
+%  Regular fixed frame (2 storeys, 1 bay)
+
+% % a) Define Distribution Factors
+% distributionFactorsElements = {[2,1], [2,3], [2,5], [3,2], [3,6], [5,2], [5,4], [5,6], [6,3], [6,5]}';
+% distributionFactors         = [0.250, 0.277, 0.473, 0.369, 0.631, 0.217, 0.361, 0.420, 0.340, 0.660]';
+% 
+% % b) Define Carryover Factors (for the same Distribution Factors Elements)
+% carryoverFactors            = [1/2, 1/2, 1/2, 1/2, 1/2, 1/2, 1/2, 1/2, 1/2, 1/2]';
+% 
+% % c) Define Fixed-End Moments [e.g. in kNm]
+% fixedEndMomentsElements     = {[1,2], [2,1], [4,5], [5,4], [2,3], [3,2], [5,6], [6,5], [2,5], [5,2], [3,6], [6,3]}';
+% fixedEndMoments             = [-20.64, -17.76, -65.35, -56.24, 9.34, 4.39, 31.42, 14.76, 16.62, 16.62, -9.58, -9.58]';
+
+
 %% Run custom 'momentDistributionMethod.p' function as save outputs
 
 %  All results are formated and saved in "{outputFileName}.txt"
@@ -112,5 +135,7 @@ outputStructure = momentDistributionMethod ( distributionFactorsElements, ...
                                              fixedEndMomentsElements, ...
                                              fixedEndMoments, ...
                                              bendingMomentUnits, ...
-                                             outputFileName ...
+                                             outputFileName, ...
+                                             limitAccuracy, ...
+                                             limitIteration ...
                                              );
