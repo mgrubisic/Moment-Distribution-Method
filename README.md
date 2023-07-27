@@ -51,78 +51,105 @@ The 2<sup>nd</sup> column of the cell array contains the **fixed-end moments (FE
 - All results are formated and saved in `{outputFileName}.txt`
 ---
 ```   
-%% EXAMPLE #1
-%  Simple fixed portal frame structure (1 storey, 1 bay)
+%% EXAMPLE #5
+%  Regular Fixed Frame (2 storeys, 1 bay)
 
-% a) Define Labels of the Elements' Ends, Distribution & Carryover Factors
+% a) Define Labels of the Elements' Ends, Distribution and Carryover Factors
 %    The 1st column of the cell array contains the LABELS OF THE ELEMENTS' ENDS
 %    The 2nd column of the cell array contains the DISTRIBUTION FACTORS
 %    The 3rd column of the cell array contains the CARRYOVER FACTORS
 
-elementsDistributionAndCarryoverFactors = { [2, 1], 0.290, 1/2
-                                            [2, 4], 0.710, 1/2
-                                            [4, 2], 0.765, 1/2
-                                            [4, 3], 0.235, 1/2 };
-% Carryover Factor of  1/2 for Hardy Cross procedure
-% Carryover Factor of -1   for Csonka-Werner procedure
+elementsDistributionAndCarryoverFactors = { [2,1], 0.250, 1/2
+                                            [2,3], 0.277, 1/2
+                                            [2,5], 0.473, 1/2
+                                            [3,2], 0.369, 1/2
+                                            [3,6], 0.631, 1/2
+                                            [5,2], 0.217, 1/2
+                                            [5,4], 0.361, 1/2
+                                            [5,6], 0.420, 1/2
+                                            [6,3], 0.340, 1/2
+                                            [6,5], 0.660, 1/2 };
+% Carryover Factor of 1/2 for Cross procedure
 
-% b) Define Labels of the Elements' Ends, Distribution & Fixed-End Moments (FEM) [e.g. in kNm]
-%    The 1st column of the cell array contains the LABELS OF THE ELEMENTS' ENDS where there are fixed-end moments (FEM)
-%    The 2nd column of the cell array contains the FIXED-END MOMENTS (FEM)
+% b) Define Labels of the Elements' Ends and Fixed-End Moments (FEM) [e.g. in kNm]
+%    The 1st column of the cell array contains the LABELS OF THE ELEMENTS' ENDS where there are Fixed-End Moments (FEM)
+%    The 2nd column of the cell array contains the Fixed-End Moments (FEM)
 
-elementsAndFixedEndMoments  = { [2, 1],  63.91
-                                [2, 4], -55.98
-                                [4, 2], -55.98
-                                [4, 3],  48.05
-                                [1, 2],  71.49
-                                [3, 4],  53.75 };
+elementsAndFixedEndMoments  = { [1,2], -20.64
+                                [2,1], -17.76
+                                [4,5], -65.35
+                                [5,4], -56.24
+                                [2,3],  9.34
+                                [3,2],  4.39
+                                [5,6],  31.42
+                                [6,5],  14.76
+                                [2,5],  16.62
+                                [5,2],  16.62
+                                [3,6], -9.58
+                                [6,3], -9.58 }; 
 ```
 
 ```
-OUTPUT OF EXAMPLE #1
+OUTPUT OF EXAMPLE #5
 
 Accuracy limit in bending moment balance:    0.1 kNm
 Limited total number of iterations (steps):  20 iterations
 
  1) Order of Iterations (Steps) by Nodes:
 ──────────────────────────────────────────
- 2, 4, 2, 4, 2, 4, 2
+ 5, 2, 6, 3, 5, 6, 2, 5, 3, 6, 2, 5, 3, 6, 2
 
  2) Total Number of Iterations (Steps):
 ────────────────────────────────────────
- 7
+ 15
 
  3) Final Balanced Bending Moments:
 ────────────────────────────────────
  Element :  Moment (kNm)
- ( 1,  2):  + 69.65 kNm
- ( 2,  1):  + 60.23 kNm
- ( 2,  4):  — 60.23 kNm
- ( 3,  4):  + 55.21 kNm
- ( 4,  2):  — 50.99 kNm
- ( 4,  3):  + 50.96 kNm
+ ( 1,  2):  — 22.06 kNm
+ ( 2,  1):  — 20.60 kNm
+ ( 2,  3):  +  7.78 kNm
+ ( 2,  5):  + 12.82 kNm
+ ( 3,  2):  +  5.99 kNm
+ ( 3,  6):  —  6.01 kNm
+ ( 4,  5):  — 62.74 kNm
+ ( 5,  2):  + 17.08 kNm
+ ( 5,  4):  — 51.01 kNm
+ ( 5,  6):  + 33.89 kNm
+ ( 6,  3):  — 10.58 kNm
+ ( 6,  5):  + 10.58 kNm
 
  4) Balance Control of Iterated Nodes:
 ───────────────────────────────────────
  Node   2:     0.00 kNm
- Node   4:  —  0.03 kNm
+ Node   3:  —  0.03 kNm
+ Node   5:  —  0.05 kNm
+ Node   6:     0.00 kNm
 
  5) All Steps of the Iteration:
-─────────────────────────────────────────────────────────────────────────────
- Element    Moment        2       4       2       4       2       4       2
-─────────────────────────────────────────────────────────────────────────────    
- ( 1, 2):    71.49    -1.15       —   -0.60       —   -0.08       —   -0.01
- ( 2, 1):    63.91    -2.30       —   -1.19       —   -0.16       —   -0.02
- ( 2, 4):   -55.98    -5.63    4.11   -2.92    0.56   -0.40    0.08   -0.05
- ( 3, 4):    53.75        —    1.26       —    0.17       —    0.02       —
- ( 4, 2):   -55.98    -2.82    8.22   -1.46    1.12   -0.20    0.15   -0.03
- ( 4, 3):    48.05        —    2.53       —    0.34       —    0.05       —
-─────────────────────────────────────────────────────────────────────────────
- Node       Moment        2       4       2       4       2       4       2
-─────────────────────────────────────────────────────────────────────────────
-    2         7.93     0.00    4.11    0.00    0.56    0.00    0.08    0.00 
-    4        -7.93   -10.75    0.00   -1.46    0.00   -0.20    0.00   -0.03 
-─────────────────────────────────────────────────────────────────────────────
+─────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+ Element     Moment       5       2       6       3       5       6       2       5       3       6       2       5       3       6       2
+─────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+ ( 1,  2):   -20.64       —   -1.14       —       —       —       —   -0.24       —       —       —   -0.04       —       —       —   -0.01
+ ( 2,  1):   -17.76       —   -2.27       —       —       —       —   -0.47       —       —       —   -0.08       —       —       —   -0.01
+ ( 2,  3):     9.34       —   -2.52       —    1.41       —       —   -0.52       —    0.15       —   -0.09       —    0.03       —   -0.02
+ ( 2,  5):    16.62    0.89   -4.30       —       —    0.48       —   -0.89    0.17       —       —   -0.15    0.03       —       —   -0.03
+ ( 3,  2):     4.39       —   -1.26       —    2.81       —       —   -0.26       —    0.31       —   -0.04       —    0.05       —   -0.01
+ ( 3,  6):    -9.58       —       —   -1.17    4.81       —   -0.57       —       —    0.52   -0.10       —       —    0.09   -0.02       —
+ ( 4,  5):   -65.35    1.48       —       —       —    0.80       —       —    0.28       —       —       —    0.05       —       —       —
+ ( 5,  2):    16.62    1.78   -2.15       —       —    0.96       —   -0.45    0.34       —       —   -0.08    0.06       —       —   -0.01
+ ( 5,  4):   -56.24    2.96       —       —       —    1.60       —       —    0.56       —       —       —    0.10       —       —       —
+ ( 5,  6):    31.42    3.44       —   -2.28       —    1.87   -1.10       —    0.65       —   -0.19       —    0.11       —   -0.03       —
+ ( 6,  3):    -9.58       —       —   -2.35    2.40       —   -1.13       —       —    0.26   -0.20       —       —    0.05   -0.04       —
+ ( 6,  5):    14.76    1.72       —   -4.56       —    0.93   -2.20       —    0.33       —   -0.39       —    0.06       —   -0.07       —
+─────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+ Node        Moment       5       2       6       3       5       6       2       5       3       6       2       5       3       6       2
+─────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+    2          8.20    9.09    0.00    0.00    1.41    1.89    1.89    0.00    0.17    0.32    0.32    0.00    0.03    0.06    0.06    0.00 
+    3         -5.19   -5.19   -6.45   -7.62    0.00    0.00   -0.57   -0.83   -0.83    0.00   -0.10   -0.14   -0.14    0.00   -0.02   -0.03 
+    5         -8.20   -0.02   -2.17   -4.44   -4.44   -0.01   -1.11   -1.56   -0.00   -0.00   -0.20   -0.27    0.00    0.00   -0.03   -0.05 
+    6          5.18    6.90    6.90    0.00    2.40    3.34    0.00    0.00    0.33    0.59    0.00    0.00    0.06    0.10    0.00    0.00 
+─────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
 ```
 ---     
 
