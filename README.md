@@ -13,16 +13,31 @@ The moment distribution method is an exact technique for calculating bending mom
 ---
 **Input:**
 
-- Define Distribution Factors                
-`distributionFactorsElements` = {cell array}          
-`distributionFactors`         = [array (columm vector)]           
+1. **Define Labels of the Elements' Ends, Distribution Factors and Carryover Factors in Cell Array**     
+The 1<sup>st</sup> column of the cell array contains the **labels of the elements' ends**      
+The 2<sup>nd</sup> column of the cell array contains the **distribution factors**      
+The 3<sup>rd</sup> column of the cell array contains the **carryover factors**      
+    - `elementsDistributionAndCarryoverFactors` = {cell array}             
               
-- Define Carryover Factors (respectively, for the same `distributionFactorsElements`)            
-`carryoverFactors`            = [array (columm vector)]                      
-               
-- Define Fixed-End Moments [e.g. in kNm]            
-`fixedEndMomentsElements`     = {cell array}               
-`fixedEndMoments`             = [array (columm vector)]
+2. **Define Labels of the Elements' Ends and Fixed-End Moments (FEM) [e.g. in kNm] in Cell Array**      
+The 1<sup>st</sup> column of the cell array contains the **labels of the elements' ends** where there are Fixed-End Moments (FEM)        
+The 2<sup>nd</sup> column of the cell array contains the **fixed-end moments (FEM)**           
+    - `elementsAndFixedEndMoments` = {cell array}               
+
+**Optional input variables:**
+
+3. Define Bending Moment Unit for Output     
+    - `bendingMomentUnits = "kNm"; % kNm, Nm, Nmm, kNmm, ...`     
+      
+4. Define File Name for Output (All results are formated and saved in `{outputFileName}.txt`)      
+    - `outputFileName = "Structure Example Output";`      
+      
+5. Accuracy limit in bending moment balance (0.1 "kNm" by default)       
+    - `limitAccuracy = 0.1;`     
+      
+6. Limited total number of iterations, i.e. steps (Infinite by default)      
+    - `limitIteration = 20;`        
+
 
 **Outputs:**
 
@@ -39,33 +54,30 @@ The moment distribution method is an exact technique for calculating bending mom
 %% EXAMPLE #1
 %  Simple fixed portal frame structure (1 storey, 1 bay)
 
-% a) Define Distribution Factors
-distributionFactorsElements = {[2,1], [2,4], [4,2], [4,3]}'; % Value pairs of element end labels
-distributionFactors         = [0.290, 0.709, 0.765, 0.235]';
+% a) Define Labels of the Elements' Ends, Distribution & Carryover Factors
+%    The 1st column of the cell array contains the LABELS OF THE ELEMENTS' ENDS
+%    The 2nd column of the cell array contains the DISTRIBUTION FACTORS
+%    The 3rd column of the cell array contains the CARRYOVER FACTORS
 
-% b) Define Carryover Factors (for the same Distribution Factors Elements)
-carryoverFactors            = [1/2, 1/2, 1/2, 1/2]';
+elementsDistributionAndCarryoverFactors = { [2, 1], 0.290, 1/2
+                                            [2, 4], 0.710, 1/2
+                                            [4, 2], 0.765, 1/2
+                                            [4, 3], 0.235, 1/2 };
+% Carryover Factor of  1/2 for Hardy Cross procedure
+% Carryover Factor of -1   for Csonka-Werner procedure
 
-% c) Define Fixed-End Moments [e.g. in kNm]
-fixedEndMomentsElements     = {[2,1], [2,4], [4,2], [4,3], [1,2], [3,4]}'; % Value pairs of element end labels
-fixedEndMoments             = [63.91, -55.98, -55.98, 48.05, 71.49, 53.75]'; % [kNm]
+% b) Define Labels of the Elements' Ends, Distribution & Fixed-End Moments [e.g. in kNm]
+%    The 1st column of the cell array contains the LABELS OF THE ELEMENTS' ENDS where there are fixed-end moments
+%    The 2nd column of the cell array contains the FIXED-END MOMENTS
+
+elementsAndFixedEndMoments  = { [2, 1],  63.91
+                                [2, 4], -55.98
+                                [4, 2], -55.98
+                                [4, 3],  48.05
+                                [1, 2],  71.49
+                                [3, 4],  53.75 };
 ```
 
-```
-%% Optional input variables
-
-% Define Bending Moment Unit for Output
-bendingMomentUnits  = "kNm"; % kNm, Nm, Nmm, kNmm, ...
-
-% Define File Name for Output (All results are formated and saved in {outputFileName}.txt)
-outputFileName      = "Structure Example Output";
-
-% Accuracy limit in bending moment balance (0.1 "kNm" by default)
-limitAccuracy       = 0.1;
-
-% Limited total number of iterations, i.e. steps (Infinite by default)
-limitIteration      = 20;
-```
 ---     
 
 > This Matlab algorithm for iteratively solving the **Moment Distribution Method** is used at the University of Osijek, **Faculty of Civil Engineering and Architecture Osijek**, Department of Technical Mechanics, as part of the **Structural Analysis 2** course.
