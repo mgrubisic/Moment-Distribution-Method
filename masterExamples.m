@@ -8,9 +8,9 @@
 │   3 Vladimir Prelog Street (University Campus), Office II.26 (2nd floor)       │
 │   HR-31000 Osijek, Croatia, Europe                                             │
 │                                                                                │
-│   E-mail:   marin.grubisic@gfos.hr | marin.grubisic@gmail.com                  │
-│   Tel.:     +385 95 823 15 75 | +385 91 224 07 92                              │
-│   Web:      www.maringrubisic.com | www.gfos.unios.hr | github.com/mgrubisic   │
+│   E-mail:   marin.grubisic@gfos.hr    | marin.grubisic@gmail.com               │
+│   Tel.:     +385 95 823 15 75         | +385 91 224 07 92                      │
+│   Web:      www.maringrubisic.com     | github.com/mgrubisic                   │
 │   Social:   linkedin.com/in/mgrubisic | twitter.com/mgrubisic                  │
 │   Update:   5.6.2014. / 29.4.2017.                                             │
 │                                                                                │
@@ -45,76 +45,198 @@ limitIteration      = 20;
 %% EXAMPLE #1
 %  Simple fixed portal frame structure (1 storey, 1 bay)
 
-% % a) Define Distribution Factors
-% distributionFactorsElements = {[2,1], [2,4], [4,2], [4,3]}';
-% distributionFactors         = [0.290, 0.709, 0.765, 0.235]';
-% 
-% % b) Define Carryover Factors (for the same Distribution Factors Elements)
-% carryoverFactors            = [1/2, 1/2, 1/2, 1/2]';
-% 
-% % c) Define Fixed-End Moments [e.g. in kNm]
-% fixedEndMomentsElements     = {[2,1], [2,4], [4,2], [4,3], [1,2], [3,4]}';
-% fixedEndMoments             = [63.91, -55.98, -55.98, 48.05, 71.49, 53.75]';
+% a) Define Labels of the Elements' Ends, Distribution & Carryover Factors
+%    The 1st column of the cell array contains the labels of the elements' ends
+%    The 2nd column of the cell array contains the distribution factors
+%    The 3rd column of the cell array contains the carryover factors
+
+distributionFactorsElements = {	[2,1], 0.290, 1/2
+								[2,4], 0.709, 1/2
+								[4,2], 0.765, 1/2
+								[4,3], 0.235, 1/2 };
+% Carryover Factor of  1/2 for Cross procedure
+% Carryover Factor of -1   for Csonka-Werner procedure
+
+% b) Define Labels of the Elements' Ends, Distribution & Fixed-End Moments [e.g. in kNm]
+%    The 1st column of the cell array contains the labels of the elements' ends where there are fixed-end moments
+%    The 2nd column of the cell array contains the fixed-end moments
+
+fixedEndMomentsElements     = {	[2,1],  63.91
+								[2,4], -55.98
+								[4,2], -55.98
+								[4,3],  48.05
+								[1,2],  71.49
+								[3,4],  53.75 };
 
 
 %% EXAMPLE #2
 %  Simple beam (3 bays)
 
-% % a) Define Distribution Factors
-% distributionFactorsElements = {[2, 1], [2, 3], [3, 2], [3, 4]}';
-% distributionFactors         = [3/11, 8/11, 8/12, 4/12]';
+% % a) Define Labels of the Elements' Ends, Distribution & Carryover Factors
+% %    The 1st column of the cell array contains the labels of the elements' ends
+% %    The 2nd column of the cell array contains the distribution factors
+% %    The 3rd column of the cell array contains the carryover factors
 % 
-% % b) Define Carryover Factors (for the same Distribution Factors Elements)
-% carryoverFactors            = [0, 1/2, 1/2, 1/2]';
+% distributionFactorsElements = {	[2, 1], 3/11, 0
+% 								[2, 3], 8/11, 1/2
+% 								[3, 2], 8/12, 1/2
+% 								[3, 4], 4/12, 1/2 };
+% % Carryover Factor of  1/2 for Cross procedure
+% % Carryover Factor of -1   for Csonka-Werner procedure
+% % 
+% % b) Define Labels of the Elements' Ends, Distribution & Fixed-End Moments [e.g. in kNm]
+% %    The 1st column of the cell array contains the labels of the elements' ends where there are fixed-end moments
+% %    The 2nd column of the cell array contains the fixed-end moments
 % 
-% % c) Define Fixed-End Moments [e.g. in kNm]
-% fixedEndMomentsElements     = {[2, 1], [2, 3], [3, 2], [3, 4], [4, 3]}';
-% fixedEndMoments             = [-13.65, 8.333, -8.333, 25, -25]';
+% fixedEndMomentsElements     = {	[2, 1], -13.65
+% 								[2, 3],  8.333
+% 								[3, 2], -8.333
+% 								[3, 4],  25
+% 								[4, 3], -25 };
 
 
 %% EXAMPLE #3
 %  Simple regular bridge structure (4 columns, 5 bays)
 
-% % a) Define Distribution Factors
-% distributionFactorsElements = {[6,1], [6,5], [6,7], [7,2], [7,6], [7,8], [8,3], [8,7], [8,9], [9,4], [9,8], [9,10]}';
-% distributionFactors         = [4/15, 1/5, 8/15, 1/4, 1/4, 2/4, 1/8, 4/8, 3/8, 4/13, 4/13, 5/13]';
+% % a) Define Labels of the Elements' Ends, Distribution & Carryover Factors
+% %    The 1st column of the cell array contains the labels of the elements' ends
+% %    The 2nd column of the cell array contains the distribution factors
+% %    The 3rd column of the cell array contains the carryover factors
 % 
-% % b) Define Carryover Factors (for the same Distribution Factors Elements)
-% carryoverFactors            = [1/2, 0, 1/2, 1/2, 1/2, 1/2, 1/2, 1/2, 1/2, 1/2, 1/2, 0]';
+% distributionFactorsElements = {	[6,1],  4/15, 1/2
+% 								[6,5],  1/5,  0
+% 								[6,7],  8/15, 1/2
+% 								[7,2],  1/4,  1/2
+% 								[7,6],  1/4,  1/2
+% 								[7,8],  2/4,  1/2
+% 								[8,3],  1/8,  1/2
+% 								[8,7],  4/8,  1/2
+% 								[8,9],  3/8,  1/2
+% 								[9,4],  4/13, 1/2
+% 								[9,8],  4/13, 1/2
+% 								[9,10], 5/13, 0 };
+% % Carryover Factor of  1/2 for Cross procedure
+% % Carryover Factor of -1   for Csonka-Werner procedure
 % 
-% % c) Define Fixed-End Moments [e.g. in kNm]
-% fixedEndMomentsElements     = {[1,6], [6,1], [7,8], [8,7]}';
-% fixedEndMoments             = [-28, -14, 25, -25]';
+% % b) Define Labels of the Elements' Ends, Distribution & Fixed-End Moments [e.g. in kNm]
+% %    The 1st column of the cell array contains the labels of the elements' ends where there are fixed-end moments
+% %    The 2nd column of the cell array contains the fixed-end moments
+% 
+% fixedEndMomentsElements     = {	[1,6], -28
+% 								[6,1], -14
+% 								[7,8],  25
+% 								[8,7], -25 };
 
 
 %% EXAMPLE #4
 %  Complex irregular frame (3 storeys, 3 bays)
 
-% a) Define Distribution Factors
-distributionFactorsElements = {[4, 3], [4, 1], [4, 5], [4, 8], [5, 4], [5, 2], [5, 6], [5, 9], [8, 7], [8, 4], [8, 9], [8, 10], [9, 8], [9, 5], [9, 11], [10, 8], [10, 11], [11, 10], [11,9]}';
-distributionFactors         = [9/28, 1/7, 3/28, 3/7, 6/55, 16/55, 9/55, 24/55, 1/5, 2/5, 1/5, 1/5, 2/7, 4/7, 1/7, 2/3, 1/3, 1/2, 1/2]';
+% a) Define Labels of the Elements' Ends, Distribution & Carryover Factors
+%    The 1st column of the cell array contains the labels of the elements' ends
+%    The 2nd column of the cell array contains the distribution factors
+%    The 3rd column of the cell array contains the carryover factors
 
-% b) Define Carryover Factors (for the same Distribution Factors Elements)
-carryoverFactors            = [0, 1/2, 1/2, 1/2, 1/2, 1/2, 0, 1/2, 0, 1/2, 1/2, 1/2, 1/2, 1/2, 1/2, 1/2, 1/2, 1/2, 1/2]';
-
-% c) Define Fixed-End Moments [e.g. in kNm]
-fixedEndMomentsElements     = {[1, 4], [4, 1], [4, 5], [5, 4], [4, 8], [8, 4], [5, 9], [9, 5], [8, 9], [9, 8], [10, 11], [11, 10]}';
-fixedEndMoments             = [-38.33, -18.67, 30, -30, 20, -20, -52.5, 52.5, 13.33, -13.33, 13.33, 36.67]';
+% distributionFactorsElements = { [4,  3], 9/28,  0
+%                                 [4,  1], 1/7,   1/2
+%                                 [4,  5], 3/28,  1/2
+%                                 [4,  8], 3/7,   1/2
+%                                 [5,  4], 6/55,  1/2
+%                                 [5,  2], 16/55, 1/2
+%                                 [5,  6], 9/55,  0
+%                                 [5,  9], 24/55, 1/2
+%                                 [8,  7], 1/5,   0
+%                                 [8,  4], 2/5,   1/2
+%                                 [8,  9], 1/5,   1/2
+%                                 [8, 10], 1/5,   1/2
+%                                 [9,  8], 2/7,   1/2
+%                                 [9,  5], 4/7,   1/2
+%                                 [9, 11], 1/7,   1/2
+%                                 [10, 8], 2/3,   1/2
+%                                 [10,11], 1/3,   1/2
+%                                 [11,10], 1/2,   1/2
+%                                 [11, 9], 1/2,   1/2 }; 
+% % Carryover Factor of  1/2 for Cross procedure
+% % Carryover Factor of -1   for Csonka-Werner procedure
+% 
+% % b) Define Labels of the Elements' Ends, Distribution & Fixed-End Moments [e.g. in kNm]
+% %    The 1st column of the cell array contains the labels of the elements' ends where there are fixed-end moments
+% %    The 2nd column of the cell array contains the fixed-end moments
+% 
+% fixedEndMomentsElements     = { [1, 4],  -38.33 
+%                                 [4, 1],  -18.67 
+%                                 [4, 5],   30
+%                                 [5, 4],  -30 
+%                                 [4, 8],   20 
+%                                 [8, 4],  -20 
+%                                 [5, 9],  -52.5
+%                                 [9, 5],   52.5 
+%                                 [8, 9],   13.33 
+%                                 [9, 8],  -13.33 
+%                                 [10, 11], 13.33  
+%                                 [11, 10], 36.67 };
 
 
 %% EXAMPLE #5
 %  Regular fixed frame (2 storeys, 1 bay)
 
-% % a) Define Distribution Factors
-% distributionFactorsElements = {[2,1], [2,3], [2,5], [3,2], [3,6], [5,2], [5,4], [5,6], [6,3], [6,5]}';
-% distributionFactors         = [0.250, 0.277, 0.473, 0.369, 0.631, 0.217, 0.361, 0.420, 0.340, 0.660]';
+% % a) Define Labels of the Elements' Ends, Distribution & Carryover Factors
+% %    The 1st column of the cell array contains the labels of the elements' ends
+% %    The 2nd column of the cell array contains the distribution factors
+% %    The 3rd column of the cell array contains the carryover factors
 % 
-% % b) Define Carryover Factors (for the same Distribution Factors Elements)
-% carryoverFactors            = [1/2, 1/2, 1/2, 1/2, 1/2, 1/2, 1/2, 1/2, 1/2, 1/2]';
+% distributionFactorsElements = { [2,1], 0.250, 1/2
+%                                 [2,3], 0.277, 1/2
+%                                 [2,5], 0.473, 1/2
+%                                 [3,2], 0.369, 1/2
+%                                 [3,6], 0.631, 1/2
+%                                 [5,2], 0.217, 1/2
+%                                 [5,4], 0.361, 1/2
+%                                 [5,6], 0.420, 1/2
+%                                 [6,3], 0.340, 1/2
+%                                 [6,5], 0.660, 1/2 };
+% % Carryover Factor of  1/2 for Cross procedure
 % 
-% % c) Define Fixed-End Moments [e.g. in kNm]
-% fixedEndMomentsElements     = {[1,2], [2,1], [4,5], [5,4], [2,3], [3,2], [5,6], [6,5], [2,5], [5,2], [3,6], [6,3]}';
-% fixedEndMoments             = [-20.64, -17.76, -65.35, -56.24, 9.34, 4.39, 31.42, 14.76, 16.62, 16.62, -9.58, -9.58]';
+% % b) Define Labels of the Elements' Ends, Distribution & Fixed-End Moments [e.g. in kNm]
+% %    The 1st column of the cell array contains the labels of the elements' ends where there are fixed-end moments
+% %    The 2nd column of the cell array contains the fixed-end moments
+% 
+% fixedEndMomentsElements     = { [1,2], -20.64
+%                                 [2,1], -17.76
+%                                 [4,5], -65.35
+%                                 [5,4], -56.24
+%                                 [2,3],  9.34
+%                                 [3,2],  4.39
+%                                 [5,6],  31.42
+%                                 [6,5],  14.76
+%                                 [2,5],  16.62
+%                                 [5,2],  16.62
+%                                 [3,6], -9.58
+%                                 [6,3], -9.58 }; 
+
+
+%% EXAMPLE #6
+
+% % a) Define Labels of the Elements' Ends, Distribution & Carryover Factors
+% %    The 1st column of the cell array contains the labels of the elements' ends
+% %    The 2nd column of the cell array contains the distribution factors
+% %    The 3rd column of the cell array contains the carryover factors
+% 
+% distributionFactorsElements = { [2, 1], 0.136, -1
+%                                 [2, 3], 0.150, -1
+%                                 [2, 4], 0.713,  0
+%                                 [3, 2], 0.174, -1
+%                                 [3, 5], 0.826,  0 };
+% % Carryover Factor of  1/2 for Cross procedure
+% % Carryover Factor of -1   for Csonka-Werner procedure
+% 
+% % b) Define Labels of the Elements' Ends, Distribution & Fixed-End Moments [e.g. in kNm]
+% %    The 1st column of the cell array contains the labels of the elements' ends where there are fixed-end moments
+% %    The 2nd column of the cell array contains the fixed-end moments
+% 
+% fixedEndMomentsElements     = { [1, 2], -80
+%                                 [2, 1], -80
+%                                 [2, 3],  30
+%                                 [3, 2],  30 };
 
 
 %% Run custom 'momentDistributionMethod.p' function as save outputs
@@ -129,11 +251,9 @@ fixedEndMoments             = [-38.33, -18.67, 30, -30, 20, -20, -52.5, 52.5, 13
     - 'balanceControlofIteratedNodes'   - Balance control of iterated nodes
     - 'allStepsoftheIteration'          - All steps of the iteration, for easy control and insight into the iteration process
 %}
+
 outputStructure = momentDistributionMethod ( distributionFactorsElements, ...
-                                             distributionFactors, ...
-                                             carryoverFactors, ...
                                              fixedEndMomentsElements, ...
-                                             fixedEndMoments, ...
                                              bendingMomentUnits, ...
                                              outputFileName, ...
                                              limitAccuracy, ...
