@@ -50,7 +50,7 @@ limitIteration      = 20;
 %    The 2nd column of the cell array contains the DISTRIBUTION FACTORS
 %    The 3rd column of the cell array contains the CARRYOVER FACTORS
 
-elementsDistributionAndCarryoverFactors = {	[2,1], 0.290, 1/2
+elementsDistributionAndCarryoverFactors = { [2,1], 0.290, 1/2
                                             [2,4], 0.709, 1/2
                                             [4,2], 0.765, 1/2
                                             [4,3], 0.235, 1/2 };
@@ -61,7 +61,7 @@ elementsDistributionAndCarryoverFactors = {	[2,1], 0.290, 1/2
 %    The 1st column of the cell array contains the LABELS OF THE ELEMENTS' ends where there are fixed-end moments
 %    The 2nd column of the cell array contains the FIXED-END MOMENTS
 
-elementsAndFixedEndMoments  = {	[2,1],  63.91
+elementsAndFixedEndMoments  = { [2,1],  63.91
                                 [2,4], -55.98
                                 [4,2], -55.98
                                 [4,3],  48.05
@@ -77,7 +77,7 @@ elementsAndFixedEndMoments  = {	[2,1],  63.91
 % %    The 2nd column of the cell array contains the DISTRIBUTION FACTORS
 % %    The 3rd column of the cell array contains the CARRYOVER FACTORS
 % 
-% elementsDistributionAndCarryoverFactors = {	[2, 1], 3/11, 0
+% elementsDistributionAndCarryoverFactors = { [2, 1], 3/11, 0
 %                                             [2, 3], 8/11, 1/2
 %                                             [3, 2], 8/12, 1/2
 %                                             [3, 4], 4/12, 1/2 };
@@ -88,7 +88,7 @@ elementsAndFixedEndMoments  = {	[2,1],  63.91
 % %    The 1st column of the cell array contains the LABELS OF THE ELEMENTS' ENDS where there are fixed-end moments
 % %    The 2nd column of the cell array contains the FIXED-END MOMENTS
 % 
-% elementsAndFixedEndMoments  = {	[2, 1], -13.65
+% elementsAndFixedEndMoments  = { [2, 1], -13.65
 %                                 [2, 3],  8.333
 %                                 [3, 2], -8.333
 %                                 [3, 4],  25
@@ -103,18 +103,18 @@ elementsAndFixedEndMoments  = {	[2,1],  63.91
 % %    The 2nd column of the cell array contains the DISTRIBUTION FACTORS
 % %    The 3rd column of the cell array contains the CARRYOVER FACTORS
 % 
-% elementsDistributionAndCarryoverFactors = {	[6,1],  4/15, 1/2
-% 								            [6,5],  1/5,  0
-% 								            [6,7],  8/15, 1/2
-% 								            [7,2],  1/4,  1/2
-% 								            [7,6],  1/4,  1/2
-% 								            [7,8],  2/4,  1/2
-% 								            [8,3],  1/8,  1/2
-% 								            [8,7],  4/8,  1/2
-% 								            [8,9],  3/8,  1/2
-% 								            [9,4],  4/13, 1/2
-% 								            [9,8],  4/13, 1/2
-% 								            [9,10], 5/13, 0 };
+% elementsDistributionAndCarryoverFactors = { [6,1],  4/15, 1/2
+%                                             [6,5],  1/5,  0
+%                                             [6,7],  8/15, 1/2
+%                                             [7,2],  1/4,  1/2
+%                                             [7,6],  1/4,  1/2
+%                                             [7,8],  2/4,  1/2
+%                                             [8,3],  1/8,  1/2
+%                                             [8,7],  4/8,  1/2
+%                                             [8,9],  3/8,  1/2
+%                                             [9,4],  4/13, 1/2
+%                                             [9,8],  4/13, 1/2
+%                                             [9,10], 5/13, 0 };
 % % Carryover Factor of  1/2 for Cross procedure
 % % Carryover Factor of -1   for Csonka-Werner procedure
 % 
@@ -122,7 +122,7 @@ elementsAndFixedEndMoments  = {	[2,1],  63.91
 % %    The 1st column of the cell array contains the LABELS OF THE ELEMENTS' ENDS where there are fixed-end moments
 % %    The 2nd column of the cell array contains the FIXED-END MOMENTS
 % 
-% elementsAndFixedEndMoments  = {	[1,6], -28
+% elementsAndFixedEndMoments  = { [1,6], -28
 %                                 [6,1], -14
 %                                 [7,8],  25
 %                                 [8,7], -25 };
