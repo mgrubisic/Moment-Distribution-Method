@@ -32,7 +32,7 @@ clc; clear all; close all; format compact
 % Define Bending Moment Unit for Output
 bendingMomentUnits  = "kNm"; % kNm, Nm, Nmm, kNmm
 
-% Define File Name for Output
+% Define File Name for Output (all results are formated and saved in "{outputFileName}.txt")
 outputFileName      = "Structure Example Output";
 
 % Accuracy limit in bending moment balance (0.1 "kNm" by default)
@@ -42,7 +42,7 @@ limitAccuracy       = 0.1;
 limitIteration      = 20;
 
 
-%% Example #1
+%% EXAMPLE #1
 %  Simple fixed portal frame structure (1 storey, 1 bay)
 
 % % a) Define Distribution Factors
@@ -57,7 +57,7 @@ limitIteration      = 20;
 % fixedEndMoments             = [63.91, -55.98, -55.98, 48.05, 71.49, 53.75]';
 
 
-%% Example #2
+%% EXAMPLE #2
 %  Simple beam (3 bays)
 
 % % a) Define Distribution Factors
@@ -72,7 +72,7 @@ limitIteration      = 20;
 % fixedEndMoments             = [-13.65, 8.333, -8.333, 25, -25]';
 
 
-%% Example #3
+%% EXAMPLE #3
 %  Simple regular bridge structure (4 columns, 5 bays)
 
 % % a) Define Distribution Factors
@@ -87,7 +87,7 @@ limitIteration      = 20;
 % fixedEndMoments             = [-28, -14, 25, -25]';
 
 
-%% Example #4
+%% EXAMPLE #4
 %  Complex irregular frame (3 storeys, 3 bays)
 
 % a) Define Distribution Factors
@@ -102,7 +102,7 @@ fixedEndMomentsElements     = {[1, 4], [4, 1], [4, 5], [5, 4], [4, 8], [8, 4], [
 fixedEndMoments             = [-38.33, -18.67, 30, -30, 20, -20, -52.5, 52.5, 13.33, -13.33, 13.33, 36.67]';
 
 
-%% Example #5
+%% EXAMPLE #5
 %  Regular fixed frame (2 storeys, 1 bay)
 
 % % a) Define Distribution Factors
