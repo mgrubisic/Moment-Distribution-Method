@@ -278,7 +278,7 @@ elementsAndFixedEndMoments  = { [2,1],  63.91
 %                                 [6, 5], -12.5 };
 
 
-%% Run custom 'momentDistributionMethod.p' function as save outputs
+%% Run custom 'momentDistributionMethod.p' function and save outputs
 
 %  All results are formatted and saved in "{outputFileName}.txt"
 
