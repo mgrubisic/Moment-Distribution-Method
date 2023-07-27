@@ -32,7 +32,7 @@ clc; clear all; close all; format compact
 % Define Bending Moment Unit for Output
 bendingMomentUnits  = "kNm"; % kNm, Nm, Nmm, kNmm
 
-% Define File Name for Output (all results are formated and saved in "{outputFileName}.txt")
+% Define File Name for Output (all results are formatted and saved in "{outputFileName}.txt")
 outputFileName      = "Structure Example Output";
 
 % Accuracy limit in bending moment balance (0.1 "kNm" by default)
