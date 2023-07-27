@@ -52,6 +52,22 @@ carryoverFactors            = [1/2, 1/2, 1/2, 1/2]';
 fixedEndMomentsElements     = {[2,1], [2,4], [4,2], [4,3], [1,2], [3,4]}'; % Value pairs of element end labels
 fixedEndMoments             = [63.91, -55.98, -55.98, 48.05, 71.49, 53.75]'; % [kNm]
 ```
+
+```
+%% Optional input variables
+
+% Define Bending Moment Unit for Output
+bendingMomentUnits  = "kNm"; % kNm, Nm, Nmm, kNmm, ...
+
+% Define File Name for Output (All results are formated and saved in {outputFileName}.txt)
+outputFileName      = "Structure Example Output";
+
+% Accuracy limit in bending moment balance (0.1 "kNm" by default)
+limitAccuracy       = 0.1;
+
+% Limited total number of iterations, i.e. steps (Infinite by default)
+limitIteration      = 20;
+```
 ---     
 
 > This Matlab algorithm for iteratively solving the **Moment Distribution Method** is used at the University of Osijek, **Faculty of Civil Engineering and Architecture Osijek**, Department of Technical Mechanics, as part of the **Structural Analysis 2** course.
