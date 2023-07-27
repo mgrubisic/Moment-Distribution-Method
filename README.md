@@ -11,7 +11,6 @@ The moment distribution method is an exact technique for calculating bending mom
 </div>
 
 ---
-
 **Input:**
 
 - Define Distribution Factors                
@@ -35,7 +34,6 @@ The moment distribution method is an exact technique for calculating bending mom
   - `allStepsoftheIteration` - All steps of the iteration, for easy control and insight into the iteration process {cell array}    
 
 - All results are formated and saved in `{outputFileName}.txt`
-
 ---
 ```   
 %% EXAMPLE #1
