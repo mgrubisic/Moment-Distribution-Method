@@ -73,7 +73,7 @@ elementsDistributionAndCarryoverFactors = { [2, 1], 0.250, 1/2
 
 % b) Define Labels of the Elements' Ends and Fixed-End Moments (FEM) [e.g. in kNm]
 %    The 1st column of the cell array contains the LABELS OF THE ELEMENTS' ENDS where there are Fixed-End Moments (FEM)
-%    The 2nd column of the cell array contains the Fixed-End Moments (FEM)
+%    The 2nd column of the cell array contains the FIXED-END MOMENTS (FEM)
 
 elementsAndFixedEndMoments  = { [1, 2], -20.64
                                 [2, 1], -17.76
