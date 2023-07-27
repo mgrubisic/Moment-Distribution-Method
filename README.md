@@ -59,34 +59,34 @@ The 2<sup>nd</sup> column of the cell array contains the **fixed-end moments (FE
 %    The 2nd column of the cell array contains the DISTRIBUTION FACTORS
 %    The 3rd column of the cell array contains the CARRYOVER FACTORS
 
-elementsDistributionAndCarryoverFactors = { [2,1], 0.250, 1/2
-                                            [2,3], 0.277, 1/2
-                                            [2,5], 0.473, 1/2
-                                            [3,2], 0.369, 1/2
-                                            [3,6], 0.631, 1/2
-                                            [5,2], 0.219, 1/2
-                                            [5,4], 0.361, 1/2
-                                            [5,6], 0.420, 1/2
-                                            [6,3], 0.340, 1/2
-                                            [6,5], 0.660, 1/2 };
+elementsDistributionAndCarryoverFactors = { [2, 1], 0.250, 1/2
+                                            [2, 3], 0.277, 1/2
+                                            [2, 5], 0.473, 1/2
+                                            [3, 2], 0.369, 1/2
+                                            [3, 6], 0.631, 1/2
+                                            [5, 2], 0.219, 1/2
+                                            [5, 4], 0.361, 1/2
+                                            [5, 6], 0.420, 1/2
+                                            [6, 3], 0.340, 1/2
+                                            [6, 5], 0.660, 1/2 };
 % Carryover Factor of 1/2 for Cross procedure
 
 % b) Define Labels of the Elements' Ends and Fixed-End Moments (FEM) [e.g. in kNm]
 %    The 1st column of the cell array contains the LABELS OF THE ELEMENTS' ENDS where there are Fixed-End Moments (FEM)
 %    The 2nd column of the cell array contains the Fixed-End Moments (FEM)
 
-elementsAndFixedEndMoments  = { [1,2], -20.64
-                                [2,1], -17.76
-                                [4,5], -65.35
-                                [5,4], -56.24
-                                [2,3],  9.34
-                                [3,2],  4.39
-                                [5,6],  31.42
-                                [6,5],  14.76
-                                [2,5],  16.62
-                                [5,2],  16.62
-                                [3,6], -9.58
-                                [6,3], -9.58 }; 
+elementsAndFixedEndMoments  = { [1, 2], -20.64
+                                [2, 1], -17.76
+                                [4, 5], -65.35
+                                [5, 4], -56.24
+                                [2, 3],  9.34
+                                [3, 2],  4.39
+                                [5, 6],  31.42
+                                [6, 5],  14.76
+                                [2, 5],  16.62
+                                [5, 2],  16.62
+                                [3, 6], -9.58
+                                [6, 3], -9.58 }; 
 ```
 
 ```
