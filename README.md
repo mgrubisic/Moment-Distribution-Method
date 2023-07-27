@@ -78,6 +78,52 @@ elementsAndFixedEndMoments  = { [2, 1],  63.91
                                 [3, 4],  53.75 };
 ```
 
+```
+OUTPUT OF EXAMPLE #1
+
+Accuracy limit in bending moment balance:    0.1 kNm
+Limited total number of iterations (steps):  20 iterations
+
+ 1) Order of Iterations (Steps) by Nodes:
+──────────────────────────────────────────
+ 2, 4, 2, 4, 2, 4, 2
+
+ 2) Total Number of Iterations (Steps):
+────────────────────────────────────────
+ 7
+
+ 3) Final Balanced Bending Moments:
+────────────────────────────────────
+ Element :  Moment (kNm)
+ ( 1,  2):  + 69.65 kNm
+ ( 2,  1):  + 60.23 kNm
+ ( 2,  4):  — 60.23 kNm
+ ( 3,  4):  + 55.21 kNm
+ ( 4,  2):  — 50.99 kNm
+ ( 4,  3):  + 50.96 kNm
+
+ 4) Balance Control of Iterated Nodes:
+───────────────────────────────────────
+ Node   2:     0.00 kNm
+ Node   4:  —  0.03 kNm
+
+ 5) All Steps of the Iteration:
+─────────────────────────────────────────────────────────────────────────────
+ Element    Moment        2       4       2       4       2       4       2
+─────────────────────────────────────────────────────────────────────────────    
+ ( 1, 2):    71.49    -1.15       —   -0.60       —   -0.08       —   -0.01
+ ( 2, 1):    63.91    -2.30       —   -1.19       —   -0.16       —   -0.02
+ ( 2, 4):   -55.98    -5.63    4.11   -2.92    0.56   -0.40    0.08   -0.05
+ ( 3, 4):    53.75        —    1.26       —    0.17       —    0.02       —
+ ( 4, 2):   -55.98    -2.82    8.22   -1.46    1.12   -0.20    0.15   -0.03
+ ( 4, 3):    48.05        —    2.53       —    0.34       —    0.05       —
+─────────────────────────────────────────────────────────────────────────────
+ Node       Moment        2       4       2       4       2       4       2
+─────────────────────────────────────────────────────────────────────────────
+    2         7.93     0.00    4.11    0.00    0.56    0.00    0.08    0.00 
+    4        -7.93   -10.75    0.00   -1.46    0.00   -0.20    0.00   -0.03 
+─────────────────────────────────────────────────────────────────────────────
+```
 ---     
 
 > This Matlab algorithm for iteratively solving the **Moment Distribution Method** is used at the University of Osijek, **Faculty of Civil Engineering and Architecture Osijek**, Department of Technical Mechanics, as part of the **Structural Analysis 2** course.
