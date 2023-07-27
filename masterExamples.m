@@ -43,23 +43,23 @@ limitIteration      = 20;
 
 
 %% EXAMPLE #1
-%  Simple fixed portal frame structure (1 storey, 1 bay)
+%  Simple Fixed Portal Frame Structure (1 storey, 1 bay)
 
-% a) Define Labels of the Elements' Ends, Distribution & Carryover Factors
+% a) Define Labels of the Elements' Ends, Distribution and Carryover Factors
 %    The 1st column of the cell array contains the LABELS OF THE ELEMENTS' ENDS
 %    The 2nd column of the cell array contains the DISTRIBUTION FACTORS
 %    The 3rd column of the cell array contains the CARRYOVER FACTORS
 
 elementsDistributionAndCarryoverFactors = { [2,1], 0.290, 1/2
-                                            [2,4], 0.709, 1/2
+                                            [2,4], 0.710, 1/2
                                             [4,2], 0.765, 1/2
                                             [4,3], 0.235, 1/2 };
 % Carryover Factor of  1/2 for Cross procedure
 % Carryover Factor of -1   for Csonka-Werner procedure
 
-% b) Define Labels of the Elements' Ends, Distribution & Fixed-End Moments [e.g. in kNm]
-%    The 1st column of the cell array contains the LABELS OF THE ELEMENTS' ends where there are fixed-end moments
-%    The 2nd column of the cell array contains the FIXED-END MOMENTS
+% b) Define Labels of the Elements' Ends and Fixed-End Moments (FEM) [e.g. in kNm]
+%    The 1st column of the cell array contains the labels of the elements' ends where there are Fixed-End Moments (FEM)
+%    The 2nd column of the cell array contains the Fixed-End Moments (FEM)
 
 elementsAndFixedEndMoments  = { [2,1],  63.91
                                 [2,4], -55.98
@@ -70,9 +70,9 @@ elementsAndFixedEndMoments  = { [2,1],  63.91
 
 
 %% EXAMPLE #2
-%  Simple beam (3 bays)
+%  Simple Beam (3 bays)
 
-% % a) Define Labels of the Elements' Ends, Distribution & Carryover Factors
+% % a) Define Labels of the Elements' Ends, Distribution and Carryover Factors
 % %    The 1st column of the cell array contains the LABELS OF THE ELEMENTS' ENDS
 % %    The 2nd column of the cell array contains the DISTRIBUTION FACTORS
 % %    The 3rd column of the cell array contains the CARRYOVER FACTORS
@@ -84,9 +84,9 @@ elementsAndFixedEndMoments  = { [2,1],  63.91
 % % Carryover Factor of  1/2 for Cross procedure
 % % Carryover Factor of -1   for Csonka-Werner procedure
 % % 
-% % b) Define Labels of the Elements' Ends, Distribution & Fixed-End Moments [e.g. in kNm]
-% %    The 1st column of the cell array contains the LABELS OF THE ELEMENTS' ENDS where there are fixed-end moments
-% %    The 2nd column of the cell array contains the FIXED-END MOMENTS
+% % b) Define Labels of the Elements' Ends and Fixed-End Moments (FEM) [e.g. in kNm]
+% %    The 1st column of the cell array contains the LABELS OF THE ELEMENTS' ENDS where there are Fixed-End Moments (FEM)
+% %    The 2nd column of the cell array contains the Fixed-End Moments (FEM)
 % 
 % elementsAndFixedEndMoments  = { [2, 1], -13.65
 %                                 [2, 3],  8.333
@@ -96,9 +96,9 @@ elementsAndFixedEndMoments  = { [2,1],  63.91
 
 
 %% EXAMPLE #3
-%  Simple regular bridge structure (4 columns, 5 bays)
+%  Simple Regular Bridge Structure (4 columns, 5 bays)
 
-% % a) Define Labels of the Elements' Ends, Distribution & Carryover Factors
+% % a) Define Labels of the Elements' Ends, Distribution and Carryover Factors
 % %    The 1st column of the cell array contains the LABELS OF THE ELEMENTS' ENDS
 % %    The 2nd column of the cell array contains the DISTRIBUTION FACTORS
 % %    The 3rd column of the cell array contains the CARRYOVER FACTORS
@@ -118,9 +118,9 @@ elementsAndFixedEndMoments  = { [2,1],  63.91
 % % Carryover Factor of  1/2 for Cross procedure
 % % Carryover Factor of -1   for Csonka-Werner procedure
 % 
-% % b) Define Labels of the Elements' Ends, Distribution & Fixed-End Moments [e.g. in kNm]
-% %    The 1st column of the cell array contains the LABELS OF THE ELEMENTS' ENDS where there are fixed-end moments
-% %    The 2nd column of the cell array contains the FIXED-END MOMENTS
+% % b) Define Labels of the Elements' Ends and Fixed-End Moments (FEM) [e.g. in kNm]
+% %    The 1st column of the cell array contains the LABELS OF THE ELEMENTS' ENDS where there are Fixed-End Moments (FEM)
+% %    The 2nd column of the cell array contains the Fixed-End Moments (FEM)
 % 
 % elementsAndFixedEndMoments  = { [1,6], -28
 %                                 [6,1], -14
@@ -129,9 +129,9 @@ elementsAndFixedEndMoments  = { [2,1],  63.91
 
 
 %% EXAMPLE #4
-%  Complex irregular frame (3 storeys, 3 bays)
+%  Complex Irregular Frame (3 storeys, 3 bays)
 
-% % a) Define Labels of the Elements' Ends, Distribution & Carryover Factors
+% % a) Define Labels of the Elements' Ends, Distribution and Carryover Factors
 % %    The 1st column of the cell array contains the LABELS OF THE ELEMENTS' ENDS
 % %    The 2nd column of the cell array contains the DISTRIBUTION FACTORS
 % %    The 3rd column of the cell array contains the CARRYOVER FACTORS
@@ -158,9 +158,9 @@ elementsAndFixedEndMoments  = { [2,1],  63.91
 % % Carryover Factor of  1/2 for Cross procedure
 % % Carryover Factor of -1   for Csonka-Werner procedure
 % 
-% % b) Define Labels of the Elements' Ends, Distribution & Fixed-End Moments [e.g. in kNm]
-% %    The 1st column of the cell array contains the LABELS OF THE ELEMENTS' ENDS where there are fixed-end moments
-% %    The 2nd column of the cell array contains the FIXED-END MOMENTS
+% % b) Define Labels of the Elements' Ends and Fixed-End Moments (FEM) [e.g. in kNm]
+% %    The 1st column of the cell array contains the LABELS OF THE ELEMENTS' ENDS where there are Fixed-End Moments (FEM)
+% %    The 2nd column of the cell array contains the Fixed-End Moments (FEM)
 % 
 % elementsAndFixedEndMoments  = { [1, 4],  -38.33 
 %                                 [4, 1],  -18.67 
@@ -177,9 +177,9 @@ elementsAndFixedEndMoments  = { [2,1],  63.91
 
 
 %% EXAMPLE #5
-%  Regular fixed frame (2 storeys, 1 bay)
+%  Regular Fixed Frame (2 storeys, 1 bay)
 
-% % a) Define Labels of the Elements' Ends, Distribution & Carryover Factors
+% % a) Define Labels of the Elements' Ends, Distribution and Carryover Factors
 % %    The 1st column of the cell array contains the LABELS OF THE ELEMENTS' ENDS
 % %    The 2nd column of the cell array contains the DISTRIBUTION FACTORS
 % %    The 3rd column of the cell array contains the CARRYOVER FACTORS
@@ -196,9 +196,9 @@ elementsAndFixedEndMoments  = { [2,1],  63.91
 %                                             [6,5], 0.660, 1/2 };
 % % Carryover Factor of  1/2 for Cross procedure
 % 
-% % b) Define Labels of the Elements' Ends, Distribution & Fixed-End Moments [e.g. in kNm]
-% %    The 1st column of the cell array contains the LABELS OF THE ELEMENTS' ENDS where there are fixed-end moments
-% %    The 2nd column of the cell array contains the FIXED-END MOMENTS
+% % b) Define Labels of the Elements' Ends and Fixed-End Moments (FEM) [e.g. in kNm]
+% %    The 1st column of the cell array contains the LABELS OF THE ELEMENTS' ENDS where there are Fixed-End Moments (FEM)
+% %    The 2nd column of the cell array contains the Fixed-End Moments (FEM)
 % 
 % elementsAndFixedEndMoments  = { [1,2], -20.64
 %                                 [2,1], -17.76
@@ -215,8 +215,9 @@ elementsAndFixedEndMoments  = { [2,1],  63.91
 
 
 %% EXAMPLE #6
+%  Two Storey Half-Frame Structure for Csonka-Werner Iteration Procedure (2 storey half-frame)
 
-% % a) Define Labels of the Elements' Ends, Distribution & Carryover Factors
+% % a) Define Labels of the Elements' Ends, Distribution and Carryover Factors
 % %    The 1st column of the cell array contains the LABELS OF THE ELEMENTS' ENDS
 % %    The 2nd column of the cell array contains the DISTRIBUTION FACTORS
 % %    The 3rd column of the cell array contains the CARRYOVER FACTORS
@@ -229,14 +230,52 @@ elementsAndFixedEndMoments  = { [2,1],  63.91
 % % Carryover Factor of  1/2 for Cross procedure
 % % Carryover Factor of -1   for Csonka-Werner procedure
 % 
-% % b) Define Labels of the Elements' Ends, Distribution & Fixed-End Moments [e.g. in kNm]
-% %    The 1st column of the cell array contains the LABELS OF THE ELEMENTS' ENDS where there are fixed-end moments
-% %    The 2nd column of the cell array contains the FIXED-END MOMENTS
+% % b) Define Labels of the Elements' Ends and Fixed-End Moments (FEM) [e.g. in kNm]
+% %    The 1st column of the cell array contains the LABELS OF THE ELEMENTS' ENDS where there are Fixed-End Moments (FEM)
+% %    The 2nd column of the cell array contains the Fixed-End Moments (FEM)
 % 
 % elementsAndFixedEndMoments  = { [1, 2], -80
 %                                 [2, 1], -80
 %                                 [2, 3],  30
 %                                 [3, 2],  30 };
+
+
+%% EXAMPLE #7
+%  Two Storey Frame, 2 bays in 1st (ground) storey, 1 bay in 2nd storey
+
+% % a) Define Labels of the Elements' Ends, Distribution and Carryover Factors
+% %    The 1st column of the cell array contains the LABELS OF THE ELEMENTS' ENDS
+% %    The 2nd column of the cell array contains the DISTRIBUTION FACTORS
+% %    The 3rd column of the cell array contains the CARRYOVER FACTORS
+% 
+% elementsDistributionAndCarryoverFactors = { [4, 1], 0.1845, 1/2
+%                                             [4, 5], 0.5695, 1/2
+%                                             [4, 7], 0.2460, 1/2
+%                                             [5, 2], 0.2801, 1/2
+%                                             [5, 4], 0.2735, 1/2
+%                                             [5, 6], 0.3282, 1/2
+%                                             [5, 8], 0.1182, 1/2
+%                                             [6, 3], 0.1684, 0
+%                                             [6, 5], 0.8316, 1/2
+%                                             [7, 4], 0.3017, 1/2
+%                                             [7, 8], 0.6983, 1/2
+%                                             [8, 5], 0.3017, 1/2
+%                                             [8, 7], 0.6983, 1/2 };
+% % Carryover Factor of  1/2 for Cross procedure
+% % Carryover Factor of -1   for Csonka-Werner procedure
+% 
+% % b) Define Labels of the Elements' Ends and Fixed-End Moments (FEM) [e.g. in kNm]
+% %    The 1st column of the cell array contains the LABELS OF THE ELEMENTS' ENDS where there are Fixed-End Moments (FEM)
+% %    The 2nd column of the cell array contains the Fixed-End Moments (FEM)
+% 
+% elementsAndFixedEndMoments  = { [7, 8],  18
+%                                 [8, 7], -18
+%                                 [8, 5],  18.75
+%                                 [5, 8], -18.75
+%                                 [4, 5],  18
+%                                 [5, 4], -18
+%                                 [5, 6],  12.5
+%                                 [6, 5], -12.5 };
 
 
 %% Run custom 'momentDistributionMethod.p' function as save outputs
