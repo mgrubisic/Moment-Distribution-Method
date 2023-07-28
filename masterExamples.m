@@ -195,6 +195,7 @@ elementsDistributionAndCarryoverFactors = { [2,1], 0.250, 1/2
                                             [6,3], 0.340, 1/2
                                             [6,5], 0.660, 1/2 };
 % Carryover Factor of  1/2 for Cross procedure
+% Carryover Factor of -1   for Csonka-Werner procedure
 
 % b) Define Labels of the Elements' Ends and Fixed-End Moments (FEM) [e.g. in kNm]
 %    The 1st column of the cell array contains the LABELS OF THE ELEMENTS' ENDS where there are Fixed-End Moments (FEM)
