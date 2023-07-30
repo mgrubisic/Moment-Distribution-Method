@@ -55,7 +55,7 @@ limitIteration      = 20;
 %                                             [4,2], 0.765, 1/2
 %                                             [4,3], 0.235, 1/2 };
 % % Carryover Factor of  1/2 for Cross procedure
-% % Carryover Factor of -1   for Csonka-Werner procedure
+% % Carryover Factor of -1   for Csonka-Werner procedure (half-frame structure)
 % 
 % % b) Define Labels of the Elements' Ends and Fixed-End Moments (FEM) [e.g. in kNm]
 % %    The 1st column of the cell array contains the labels of the elements' ends where there are Fixed-End Moments (FEM)
@@ -82,7 +82,7 @@ limitIteration      = 20;
 %                                             [3, 2], 8/12, 1/2
 %                                             [3, 4], 4/12, 1/2 };
 % % Carryover Factor of  1/2 for Cross procedure
-% % Carryover Factor of -1   for Csonka-Werner procedure
+% % Carryover Factor of -1   for Csonka-Werner procedure (half-frame structure)
 % % 
 % % b) Define Labels of the Elements' Ends and Fixed-End Moments (FEM) [e.g. in kNm]
 % %    The 1st column of the cell array contains the LABELS OF THE ELEMENTS' ENDS where there are Fixed-End Moments (FEM)
@@ -116,7 +116,7 @@ limitIteration      = 20;
 %                                             [9,8],  4/13, 1/2
 %                                             [9,10], 5/13, 0 };
 % % Carryover Factor of  1/2 for Cross procedure
-% % Carryover Factor of -1   for Csonka-Werner procedure
+% % Carryover Factor of -1   for Csonka-Werner procedure (half-frame structure)
 % 
 % % b) Define Labels of the Elements' Ends and Fixed-End Moments (FEM) [e.g. in kNm]
 % %    The 1st column of the cell array contains the LABELS OF THE ELEMENTS' ENDS where there are Fixed-End Moments (FEM)
@@ -156,7 +156,7 @@ limitIteration      = 20;
 %                                             [11,10], 1/2,   1/2
 %                                             [11, 9], 1/2,   1/2 }; 
 % % Carryover Factor of  1/2 for Cross procedure
-% % Carryover Factor of -1   for Csonka-Werner procedure
+% % Carryover Factor of -1   for Csonka-Werner procedure (half-frame structure)
 % 
 % % b) Define Labels of the Elements' Ends and Fixed-End Moments (FEM) [e.g. in kNm]
 % %    The 1st column of the cell array contains the LABELS OF THE ELEMENTS' ENDS where there are Fixed-End Moments (FEM)
@@ -195,7 +195,7 @@ elementsDistributionAndCarryoverFactors = { [2,1], 0.250, 1/2
                                             [6,3], 0.340, 1/2
                                             [6,5], 0.660, 1/2 };
 % Carryover Factor of  1/2 for Cross procedure
-% Carryover Factor of -1   for Csonka-Werner procedure
+% Carryover Factor of -1   for Csonka-Werner procedure (half-frame structure)
 
 % b) Define Labels of the Elements' Ends and Fixed-End Moments (FEM) [e.g. in kNm]
 %    The 1st column of the cell array contains the LABELS OF THE ELEMENTS' ENDS where there are Fixed-End Moments (FEM)
@@ -229,7 +229,7 @@ elementsAndFixedEndMoments  = { [1,2], -20.64
 %                                             [3, 2], 0.174, -1
 %                                             [3, 5], 0.826,  0 };
 % % Carryover Factor of  1/2 for Cross procedure
-% % Carryover Factor of -1   for Csonka-Werner procedure
+% % Carryover Factor of -1   for Csonka-Werner procedure (half-frame structure)
 % 
 % % b) Define Labels of the Elements' Ends and Fixed-End Moments (FEM) [e.g. in kNm]
 % %    The 1st column of the cell array contains the LABELS OF THE ELEMENTS' ENDS where there are Fixed-End Moments (FEM)
@@ -263,7 +263,7 @@ elementsAndFixedEndMoments  = { [1,2], -20.64
 %                                             [8, 5], 0.3017, 1/2
 %                                             [8, 7], 0.6983, 1/2 };
 % % Carryover Factor of  1/2 for Cross procedure
-% % Carryover Factor of -1   for Csonka-Werner procedure
+% % Carryover Factor of -1   for Csonka-Werner procedure (half-frame structure)
 % 
 % % b) Define Labels of the Elements' Ends and Fixed-End Moments (FEM) [e.g. in kNm]
 % %    The 1st column of the cell array contains the LABELS OF THE ELEMENTS' ENDS where there are Fixed-End Moments (FEM)
