@@ -260,7 +260,7 @@ If you use this software in teaching, research or publications, please cite it. 
 
 **APA**
 
-> Grubišić, M. (2026). *Moment Distribution Method (Hardy Cross): MATLAB and Python Implementation* (Version 1.0) [Computer software]. Zenodo. https://doi.org/10.5281/zenodo.23042195
+> Grubišić, M. (2026). *Moment Distribution Method (Hardy Cross): MATLAB and Python Implementation* (Version 1.0.1) [Computer software]. Zenodo. https://doi.org/10.5281/zenodo.23042195
 
 **BibTeX**
 
@@ -269,7 +269,7 @@ If you use this software in teaching, research or publications, please cite it. 
   author    = {Grubi{\v{s}}i{\'c}, Marin},
   title     = {{Moment Distribution Method (Hardy Cross): MATLAB and Python Implementation}},
   year      = {2026},
-  version   = {1.0},
+  version   = {1.0.1},
   publisher = {Zenodo},
   doi       = {10.5281/zenodo.23042195},
   url       = {https://github.com/mgrubisic/Moment-Distribution-Method}
