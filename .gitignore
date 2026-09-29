@@ -5,6 +5,7 @@
 # --- Local archives / old versions (not part of the public release) ---
 *_BACKUP.m
 *_BACKUP.py
+*.bat
 
 # --- Generated reports ---
 # Default output file name of both functions (the example reports
@@ -64,4 +65,3 @@ desktop.ini
 $RECYCLE.BIN/
 .DS_Store
 ._*
-.bat
