@@ -10,14 +10,14 @@ abstract: >-
   carried over by the carryover factors (Cross and Csonka-Werner procedures).
   Both implementations produce the same formatted report with all iteration
   steps. Used in the Structural Analysis 2 course at the Faculty of Civil
-  Engineering and Architecture Osijek, University of Osijek.
+  Engineering and Architecture Osijek, Josip Juraj Strossmayer University of Osijek.
 authors:
   - family-names: "Grubišić"
     given-names: "Marin"
     orcid: "https://orcid.org/0000-0001-8674-0082"
     email: "marin.grubisic@gfos.hr"
-    affiliation: "University of Osijek, Faculty of Civil Engineering and Architecture Osijek, Department of Technical Mechanics"
-version: "2.0.0"
+    affiliation: "Josip Juraj Strossmayer University of Osijek, Faculty of Civil Engineering and Architecture Osijek, Department of Technical Mechanics"
+version: "1.0"
 date-released: "2026-09-29"
 # Uncomment after the first Zenodo release (use the concept DOI, which always resolves to the latest version):
 # doi: "10.5281/zenodo.XXXXXXX"
