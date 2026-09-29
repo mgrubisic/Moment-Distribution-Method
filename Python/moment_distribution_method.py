@@ -43,7 +43,7 @@ SAFETY_LIMIT = 1_000_000  # guards against divergence when limit_iteration = inf
 DISTRIBUTION_FACTOR_TOLERANCE = 1e-2
 
 # How to cite this software (APA style, see CITATION.cff)
-SOFTWARE_VERSION = "2.0.0"
+SOFTWARE_VERSION = "1.0"
 RELEASE_YEAR = "2026"
 CITATION_DOI = ""  # Zenodo concept DOI, e.g. "10.5281/zenodo.XXXXXXX"
 REPOSITORY_URL = "https://github.com/mgrubisic/Moment-Distribution-Method"
@@ -451,7 +451,7 @@ def _citation_lines() -> list[str]:
     link = f"Zenodo. https://doi.org/{CITATION_DOI}" if CITATION_DOI else REPOSITORY_URL
     return [
         " If you use this software, please cite it as:",
-        f"     Grubišić, M. ({RELEASE_YEAR}). Moment Distribution Method (Hardy Cross, 1930): MATLAB and Python",
+        f"     Grubišić, M. ({RELEASE_YEAR}). Moment Distribution Method (Hardy Cross): MATLAB and Python",
         f"     Implementation (Version {SOFTWARE_VERSION}) [Computer software].",
         f"     {link}",
     ]

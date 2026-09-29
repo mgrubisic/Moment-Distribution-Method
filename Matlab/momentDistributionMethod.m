@@ -388,7 +388,7 @@ end
 function lines = citationLines()
 %CITATIONLINES  How to cite this software (APA style, see CITATION.cff).
 
-version       = "2.0.0";
+version       = "1.0";
 releaseYear   = "2026";
 doi           = "";   % Zenodo concept DOI, e.g. "10.5281/zenodo.XXXXXXX"
 repositoryUrl = "https://github.com/mgrubisic/Moment-Distribution-Method";
@@ -401,7 +401,7 @@ end
 
 lines = [
     " If you use this software, please cite it as:"
-    "     Grubišić, M. (" + releaseYear + "). Moment Distribution Method (Hardy Cross, 1930): MATLAB and Python"
+    "     Grubišić, M. (" + releaseYear + "). Moment Distribution Method (Hardy Cross): MATLAB and Python"
     "     Implementation (Version " + version + ") [Computer software]."
     "     " + link
     ];
