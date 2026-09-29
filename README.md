@@ -1,6 +1,7 @@
 # Moment Distribution Method (*Hardy Cross*)   
 
-[![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE.txt)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE.txt)
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.23042195.svg)](https://doi.org/10.5281/zenodo.23042195)
 
 > If you use this software, please cite it – see [How to cite](#how-to-cite).
 
