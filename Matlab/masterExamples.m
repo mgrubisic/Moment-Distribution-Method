@@ -2,14 +2,14 @@
 ┌── Author's Information ────────────────────────────────────────────────────────┐
 │                                                                                │
 │   Marin Grubišić                                                               │
-│   Assistant Professor | MEng, PhD                                              │
+│   Associate Professor | MEng, PhD, PE                                          │
 │   University of Osijek, Faculty of Civil Engineering and Architecture Osijek   │
 │   Department of Technical Mechanics                                            │
 │   3 Vladimir Prelog Street (University Campus), Office II.26 (2nd floor)       │
 │   HR-31000 Osijek, Croatia, Europe                                             │
 │                                                                                │
 │   E-mail:   marin.grubisic@gfos.hr    | marin.grubisic@gmail.com               │
-│   Tel.:     +385 95 823 15 75         | +385 91 224 07 92                      │
+│   Tel.:     +385 91 224 07 92         | +385 95 823 15 75                      │
 │   Web:      www.maringrubisic.com     | github.com/mgrubisic                   │
 │   Social:   linkedin.com/in/mgrubisic | twitter.com/mgrubisic                  │
 │   Update:   5.6.2014. / 29.4.2017.                                             │
@@ -25,21 +25,26 @@ MOMENT DISTRIBUTION METHOD (Hardy Cross, 1930)
     and shear effects.
 %}
 
-clc; clear all; close all; format compact
+clc; clear; close all; format compact
 
 %% Optional input variables
 
 % Define Bending Moment Unit for Output
 bendingMomentUnits  = "kNm"; % kNm, Nm, Nmm, kNmm
 
-% Define File Name for Output (all results are formatted and saved in "{outputFileName}.txt")
+% Define File Name for Output (all results are formatted and saved in "{outputFileName}.txt";
+% use "" to skip writing the file)
 outputFileName      = "Structure Example Output";
 
-% Accuracy limit in bending moment balance (0.1 "kNm" by default)
+% Accuracy limit in bending moment balance (0.1 "kNm" by default); the iteration
+% stops after the step in which the balanced moment is not larger than this limit
 limitAccuracy       = 0.1;
 
-% Limited total number of iterations, i.e. steps (Infinite by default)
+% Limited total number of iterations, i.e. steps (unlimited, Inf, by default)
 limitIteration      = 20;
+
+% Table style of the output ("fancy" box-drawing characters by default, or "ascii")
+tableStyle          = "fancy";
 
 
 %% EXAMPLE #1
@@ -279,17 +284,21 @@ elementsAndFixedEndMoments  = { [1,2], -20.64
 %                                 [6, 5], -12.5 };
 
 
-%% Run custom 'momentDistributionMethod.p' function and save outputs
+%% Run 'momentDistributionMethod.m' function and save outputs
 
 %  All results are formatted and saved in "{outputFileName}.txt"
 
 %{
 'outputStructure' contains:
-    - 'nodeIterationSequence'           - Order of iterations (steps) by nodes
+    - 'nodeIterationSequence'           - Order of iterations (steps) by nodes [row vector]
     - 'totalNumberofIterations'         - Total number of iterations (steps)
-    - 'finalBalancedBendingMoments'     - Final balanced bending moments
+    - 'finalBalancedBendingMoments'     - Final balanced bending moments {[i,j], moment}
     - 'balanceControlofIteratedNodes'   - Balance control of iterated nodes
-    - 'allStepsoftheIteration'          - All steps of the iteration, for easy control and insight into the iteration process
+                                          [node, initial unbalance, unbalance after each step]
+    - 'allStepsoftheIteration'          - All steps of the iteration, for easy control and insight
+                                          into the iteration process {"Element", "Moment", nodes;
+                                          [i,j], FEM, increment in each step}
+    - 'isConverged'                     - true if the accuracy limit was reached
 %}
 
 outputStructure = momentDistributionMethod ( elementsDistributionAndCarryoverFactors, ...
@@ -297,5 +306,6 @@ outputStructure = momentDistributionMethod ( elementsDistributionAndCarryoverFac
                                              bendingMomentUnits, ...
                                              outputFileName, ...
                                              limitAccuracy, ...
-                                             limitIteration ...
+                                             limitIteration, ...
+                                             tableStyle ...
                                              );
