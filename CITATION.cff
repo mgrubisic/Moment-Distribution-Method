@@ -1,0 +1,47 @@
+cff-version: 1.2.0
+message: "If you use this software, please cite it using the metadata from this file."
+type: software
+title: "Moment Distribution Method (Hardy Cross): MATLAB and Python Implementation"
+abstract: >-
+  MATLAB and Python implementation of the moment distribution method
+  (Hardy Cross) for the structural analysis of statically indeterminate
+  beams and frames. In every step the node with the largest unbalanced moment
+  is released and its moment is distributed by the distribution factors and
+  carried over by the carryover factors (Cross and Csonka-Werner procedures).
+  Both implementations produce the same formatted report with all iteration
+  steps. Used in the Structural Analysis 2 course at the Faculty of Civil
+  Engineering and Architecture Osijek, University of Osijek.
+authors:
+  - family-names: "Grubišić"
+    given-names: "Marin"
+    orcid: "https://orcid.org/0000-0001-8674-0082"
+    email: "marin.grubisic@gfos.hr"
+    affiliation: "University of Osijek, Faculty of Civil Engineering and Architecture Osijek, Department of Technical Mechanics"
+version: "2.0.0"
+date-released: "2026-09-29"
+# Uncomment after the first Zenodo release (use the concept DOI, which always resolves to the latest version):
+# doi: "10.5281/zenodo.XXXXXXX"
+repository-code: "https://github.com/mgrubisic/Moment-Distribution-Method"
+license: MIT
+keywords:
+  - moment distribution method
+  - Hardy Cross
+  - Csonka-Werner
+  - structural analysis
+  - statically indeterminate structures
+  - beams and frames
+  - civil engineering education
+  - MATLAB
+  - Python
+references:
+  - type: article
+    authors:
+      - family-names: "Cross"
+        given-names: "Hardy"
+    title: "Analysis of Continuous Frames by Distributing Fixed-End Moments"
+    journal: "Proceedings of the American Society of Civil Engineers"
+    volume: 56
+    issue: "5"
+    start: 919
+    end: 928
+    year: 1930

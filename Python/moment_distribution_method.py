@@ -42,6 +42,12 @@ DEFAULT_LIMIT_ACCURACY = 0.1
 SAFETY_LIMIT = 1_000_000  # guards against divergence when limit_iteration = inf
 DISTRIBUTION_FACTOR_TOLERANCE = 1e-2
 
+# How to cite this software (APA style, see CITATION.cff)
+SOFTWARE_VERSION = "2.0.0"
+RELEASE_YEAR = "2026"
+CITATION_DOI = ""  # Zenodo concept DOI, e.g. "10.5281/zenodo.XXXXXXX"
+REPOSITORY_URL = "https://github.com/mgrubisic/Moment-Distribution-Method"
+
 ElementEnd = tuple[int, int]
 
 
@@ -433,9 +439,22 @@ def _build_report(model: _Model, iteration: _Iteration, final_moments: np.ndarra
           for node, row in zip(model.nodes, history)),
         symbols.heavy_line * table_width,
         "",
+        *_citation_lines(),
+        "",
         " Structural analysis completed successfully. End of document.",
     ]
     return "\n".join(lines) + "\n"
+
+
+def _citation_lines() -> list[str]:
+    """How to cite this software (APA style, see CITATION.cff)."""
+    link = f"Zenodo. https://doi.org/{CITATION_DOI}" if CITATION_DOI else REPOSITORY_URL
+    return [
+        " If you use this software, please cite it as:",
+        f"     Grubišić, M. ({RELEASE_YEAR}). Moment Distribution Method (Hardy Cross, 1930): MATLAB and Python",
+        f"     Implementation (Version {SOFTWARE_VERSION}) [Computer software].",
+        f"     {link}",
+    ]
 
 
 def _section_title(title: str, symbols: _TableSymbols, rule_width: int | None = None) -> list[str]:

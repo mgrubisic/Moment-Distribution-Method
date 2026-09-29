@@ -1,4 +1,11 @@
-# Moment Distribution Method (*Hardy Cross*, 1930)   
+# Moment Distribution Method (*Hardy Cross*)   
+
+<!-- After the first Zenodo release, replace XXXXXXX with the concept DOI and uncomment the badge:
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.XXXXXXX.svg)](https://doi.org/10.5281/zenodo.XXXXXXX)
+-->
+[![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE.txt)
+
+> If you use this software, please cite it – see [How to cite](#how-to-cite).
 
 <div align='justify'>
 Hardy Cross developed and formally presented the moment distribution method for analysing beams and frames in 1930. This method, unlike the slope-deflection method, is approximate and eliminates the need to solve simultaneous equations. The number of successive approximations or iterations performed determines the accuracy of the results obtained using the moment distribution. It focuses on flexural effects while ignoring axial and shear effects. Prior to the widespread use of computers in structural design and analysis, the moment distribution method was the most widely used.
@@ -19,10 +26,11 @@ In every step, the node with the largest absolute unbalanced moment is released:
 
 | File | Description |
 |---|---|
-| `momentDistributionMethod.m` | MATLAB function (R2019b or newer) |
-| `masterExamples.m` | MATLAB script with 7 examples |
-| `moment_distribution_method.py` | Python function (Python 3.9+, NumPy) |
-| `masterExamples.py` | Python script with the same 7 examples |
+| `Matlab/momentDistributionMethod.m` | MATLAB function (R2019b or newer) |
+| `Matlab/masterExamples.m` | MATLAB script with 7 examples |
+| `Python/moment_distribution_method.py` | Python function (Python 3.9+, NumPy) |
+| `Python/masterExamples.py` | Python script with the same 7 examples |
+| `CITATION.cff` | Citation metadata (GitHub "Cite this repository", Zenodo) |
 
 Both implementations use the same algorithm and write the same text report.
 
@@ -188,6 +196,7 @@ The Python version (`moment_distribution_method.py`) is a direct port of the MAT
 
 ```
 pip install numpy
+cd Python
 python masterExamples.py
 ```
 
@@ -245,6 +254,36 @@ print(result.final_balanced_bending_moments[(1, 2)])   # -22.06...
 | `report` | – | formatted text report |
 
 Invalid inputs raise `ValueError`; distribution factors that do not sum to 1 at a node issue a `UserWarning`.
+
+---
+
+## How to cite
+
+If you use this software in teaching, research or publications, please cite it. The citation is also printed at the end of every report, and GitHub offers it in APA and BibTeX format under **"Cite this repository"** (from [`CITATION.cff`](CITATION.cff)).
+
+**APA**
+
+> Grubišić, M. (2026). *Moment Distribution Method (Hardy Cross): MATLAB and Python Implementation* (Version 1.0) [Computer software]. Zenodo. https://doi.org/10.5281/zenodo.XXXXXXX
+
+**BibTeX**
+
+```bibtex
+@software{Grubisic_Moment_Distribution_Method_2026,
+  author    = {Grubi{\v{s}}i{\'c}, Marin},
+  title     = {{Moment Distribution Method (Hardy Cross): MATLAB and Python Implementation}},
+  year      = {2026},
+  version   = {1.0},
+  publisher = {Zenodo},
+  doi       = {10.5281/zenodo.XXXXXXX},
+  url       = {https://github.com/mgrubisic/Moment-Distribution-Method}
+}
+```
+
+The DOI above is the Zenodo **concept DOI**, which always resolves to the latest version; every release also has its own version DOI, listed on the Zenodo record, for citing the exact version used.
+
+Please also cite the original method:
+
+> Cross, H. (1930). Analysis of continuous frames by distributing fixed-end moments. *Proceedings of the American Society of Civil Engineers*, 56(5), 919–928.
 
 ---     
 

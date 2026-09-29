@@ -1,1 +1,66 @@
-*.bat
+# ======================================================================
+#  Moment Distribution Method (Hardy Cross) - MATLAB and Python
+# ======================================================================
+
+# --- Local archives / old versions (not part of the public release) ---
+*_BACKUP.m
+*_BACKUP.py
+
+# --- Generated reports ---
+# Default output file name of both functions (the example reports
+# "Structure Example Output.txt" are kept in the repository)
+
+# --- MATLAB ---
+*.asv
+*.m~
+*.autosave
+*.mex*
+*.mlappinstall
+*.mltbx
+*.p
+slprj/
+codegen/
+sccprj/
+*.slxc
+*.mat
+octave-workspace
+helpsearch*/
+resources/project/
+
+# --- Python ---
+__pycache__/
+*.py[cod]
+*$py.class
+*.egg-info/
+.eggs/
+build/
+dist/
+.venv/
+venv/
+env/
+.env
+.python-version
+.ipynb_checkpoints/
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.coverage
+htmlcov/
+
+# --- Editors / IDEs ---
+.vscode/
+.idea/
+*.swp
+*~
+
+# --- AI assistants ---
+.claude/
+CLAUDE.local.md
+
+# --- Operating systems ---
+Thumbs.db
+ehthumbs.db
+desktop.ini
+$RECYCLE.BIN/
+.DS_Store
+._*

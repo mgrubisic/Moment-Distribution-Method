@@ -332,6 +332,8 @@ report = [
     pad(compose(" %4d", model.nodes), labelWidth) + tableRows(history, colWidth, "")
     rule(symbols.heavyLine, tableWidth)
     ""
+    citationLines()
+    ""
     " Structural analysis completed successfully. End of document."
     ];
 end
@@ -379,6 +381,29 @@ lines = [
     symbols.topLeft + title + rule(symbols.heavyLine, innerWidth - strlength(title)) + symbols.topRight
     symbols.vertical + pad(content, innerWidth) + symbols.vertical
     symbols.bottomLeft + rule(symbols.heavyLine, innerWidth) + symbols.bottomRight
+    ];
+end
+
+
+function lines = citationLines()
+%CITATIONLINES  How to cite this software (APA style, see CITATION.cff).
+
+version       = "2.0.0";
+releaseYear   = "2026";
+doi           = "";   % Zenodo concept DOI, e.g. "10.5281/zenodo.XXXXXXX"
+repositoryUrl = "https://github.com/mgrubisic/Moment-Distribution-Method";
+
+if strlength(doi) > 0
+    link = "Zenodo. https://doi.org/" + doi;
+else
+    link = repositoryUrl;
+end
+
+lines = [
+    " If you use this software, please cite it as:"
+    "     Grubišić, M. (" + releaseYear + "). Moment Distribution Method (Hardy Cross, 1930): MATLAB and Python"
+    "     Implementation (Version " + version + ") [Computer software]."
+    "     " + link
     ];
 end
 
