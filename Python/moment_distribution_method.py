@@ -43,10 +43,10 @@ SAFETY_LIMIT = 1_000_000  # guards against divergence when limit_iteration = inf
 DISTRIBUTION_FACTOR_TOLERANCE = 1e-2
 
 # How to cite this software (APA style, see CITATION.cff)
-SOFTWARE_VERSION = "1.0"
+SOFTWARE_VERSION = "1.0.1"
 RELEASE_YEAR = "2026"
-CITATION_DOI = ""  # Zenodo concept DOI, e.g. "10.5281/zenodo.XXXXXXX"
-REPOSITORY_URL = "https://github.com/mgrubisic/Moment-Distribution-Method"
+CITATION_DOI = "10.5281/zenodo.23042195"
+REPOSITORY_URL = "https://zenodo.org/records/23042195"
 
 ElementEnd = tuple[int, int]
 

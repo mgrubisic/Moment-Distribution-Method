@@ -388,10 +388,10 @@ end
 function lines = citationLines()
 %CITATIONLINES  How to cite this software (APA style, see CITATION.cff).
 
-version       = "1.0";
+version       = "1.0.1";
 releaseYear   = "2026";
-doi           = "";   % Zenodo concept DOI, e.g. "10.5281/zenodo.XXXXXXX"
-repositoryUrl = "https://github.com/mgrubisic/Moment-Distribution-Method";
+doi           = "10.5281/zenodo.23042195"
+repositoryUrl = "https://zenodo.org/records/23042195";
 
 if strlength(doi) > 0
     link = "Zenodo. https://doi.org/" + doi;
